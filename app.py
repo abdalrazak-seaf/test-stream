@@ -3,7 +3,7 @@
 # Created on Sun Dec 24 19:42:21 2023
 import streamlit as st
 import page1
-# import page2
+import page2
 
 
 
