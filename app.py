@@ -8,8 +8,8 @@ import streamlit as st
 
 
 st.set_page_config(page_title="Superstore!!!", page_icon=":bar_chart:",layout="wide")
-# # Main app script
-# st.title('My Multi-Page Streamlit App')
+# Main app script
+st.title('My Multi-Page Streamlit App')
 
 # Navigation
 st.sidebar.title('Navigation')
