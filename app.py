@@ -5,9 +5,9 @@ import streamlit as st
 # import page1
 # import page2
 
-st.write ("hello")
 
-# st.set_page_config(page_title="Superstore!!!", page_icon=":bar_chart:",layout="wide")
+
+st.set_page_config(page_title="Superstore!!!", page_icon=":bar_chart:",layout="wide")
 # # Main app script
 # st.title('My Multi-Page Streamlit App')
 
