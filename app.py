@@ -7,13 +7,13 @@ import streamlit as st
 
 st.write ("hello")
 
-st.set_page_config(page_title="Superstore!!!", page_icon=":bar_chart:",layout="wide")
-# Main app script
-st.title('My Multi-Page Streamlit App')
+# st.set_page_config(page_title="Superstore!!!", page_icon=":bar_chart:",layout="wide")
+# # Main app script
+# st.title('My Multi-Page Streamlit App')
 
-# # Navigation
-# st.sidebar.title('Navigation')
-# page = st.sidebar.radio('Select a Page', ['Page 1', 'Page 2'])
+# Navigation
+st.sidebar.title('Navigation')
+page = st.sidebar.radio('Select a Page', ['Page 1', 'Page 2'])
 
 # if page == 'Page 1':
 #     exec(open("page1.py").read())
