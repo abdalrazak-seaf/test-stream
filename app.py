@@ -10,10 +10,13 @@ import streamlit as st
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 
-# # Create a connection object.
-# conn = st.connection("gsheets", type=GSheetsConnection)
+url = "https://docs.google.com/spreadsheets/d/1G9T2qeBA8AAKUl6J1lGvSY_Kw2-CmKQBIFkAFptoxa8/edit?gid=0#gid=0"
 
-# df = conn.read()
+
+# Create a connection object.
+conn = st.connection("gsheets", type=GSheetsConnection)
+
+df = conn.read()
 
 # # Print results.
 # for row in df.itertuples():
