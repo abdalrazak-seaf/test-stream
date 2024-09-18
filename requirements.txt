@@ -6,4 +6,4 @@ matplotlib
 plotly.express
 gspread
 oauth2client
-sklearn
+scikit-learn
