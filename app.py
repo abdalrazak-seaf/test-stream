@@ -13,8 +13,8 @@ st.set_page_config(page_title="Superstore!!!", page_icon=":bar_chart:",layout="w
 st.title('My Multi-Page Streamlit App')
 
 # Navigation
-st.sidebar.title('Navigation')
-page = st.sidebar.radio('Select a Page', ['Page 1', 'Page 2'])
+# st.sidebar.title('Navigation')
+# page = st.sidebar.radio('Select a Page', ['Page 1', 'Page 2'])
 
 if page == 'Page 1':
     exec(open("page1.py").read())
