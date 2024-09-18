@@ -1,8 +1,2 @@
 streamlit
-pandas
-seaborn
-numpy
-matplotlib
-plotly.express
-gspread
-oauth2client
+streamlit-gsheets
