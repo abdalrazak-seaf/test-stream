@@ -1,2 +1,8 @@
 streamlit
-streamlit_gsheets==0.0.1
+pandas
+seaborn
+numpy
+matplotlib
+plotly.express
+gspread
+oauth2client
