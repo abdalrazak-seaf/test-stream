@@ -17,6 +17,7 @@ url = "https://docs.google.com/spreadsheets/d/1G9T2qeBA8AAKUl6J1lGvSY_Kw2-CmKQBI
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 df = conn.read()
+st.dataframe(df)
 
 # # Print results.
 # for row in df.itertuples():
