@@ -7,8 +7,8 @@ import streamlit as st
 
 # streamlit_app.py
 
-# import streamlit as st
-# from streamlit_gsheets import GSheetsConnection
+
+from streamlit_gsheets import GSheetsConnection
 
 # url = "https://docs.google.com/spreadsheets/d/1G9T2qeBA8AAKUl6J1lGvSY_Kw2-CmKQBIFkAFptoxa8/edit?gid=0#gid=0"
 
