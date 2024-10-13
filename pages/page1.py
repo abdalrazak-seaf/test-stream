@@ -14,7 +14,7 @@ import seaborn as sns
 import numpy as np
 import streamlit as st
 
-st.title("Chatbot")
+# st.title("Chatbot")
 
 import streamlit as st
 import gspread
