@@ -16,5 +16,11 @@ import streamlit as st
 
 st.title("Chatbot")
 
+from streamlit_gsheets import GSheetsConnection
+
+conn = st.connection("gsheets", type=GSheetsConnection)
+st.write(conn)
+st.help(conn)
+
 
 
