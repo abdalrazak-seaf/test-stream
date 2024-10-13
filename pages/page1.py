@@ -16,11 +16,18 @@ import streamlit as st
 
 st.title("Chatbot")
 
-from streamlit_gsheets import GSheetsConnection
-
+# Create a connection object.
 conn = st.connection("gsheets", type=GSheetsConnection)
-st.write(conn)
-st.help(conn)
+
+# Read the entire sheet.
+df = conn.read()
+
+# Convert the data to a pandas DataFrame
+data = pd.DataFrame(df)
+
+# Print results to the app.
+st.write("Google Sheet Data")
+st.dataframe(data)
 
 
 
