@@ -7,4 +7,5 @@ plotly.express
 gspread
 oauth2client
 scikit-learn
+streamlit_gsheets
 
