@@ -16,24 +16,46 @@ import streamlit as st
 
 st.title("Chatbot")
 
-# Create a connection object.
-conn = st.connection("gsheets", type=GSheetsConnection)
+import streamlit as st
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import pandas as pd
+import json
 
-# Try to read the data from the Google Sheet
-df = conn.read()
+# Function to load Google Sheets data
+def load_gsheet_data():
+    # Define the scope for accessing Google Sheets and Google Drive
+    scope = [
+        "https://spreadsheets.google.com/feeds",
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/drive.file",
+        "https://www.googleapis.com/auth/drive"
+    ]
 
-# Debugging - Check the type of the returned data
-st.write("Type of returned data:", type(df))
+    # Load credentials from Streamlit secrets
+    creds_dict = json.loads(st.secrets["connections.gsheets"])
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 
-# Debugging - Check the contents of the data
-st.write("Raw Data:", df)
+    # Authorize the client
+    client = gspread.authorize(creds)
 
-# If df is a dictionary or list, convert to a DataFrame
-try:
-    data = pd.DataFrame(df)
-    st.write("Converted DataFrame:")
-    st.dataframe(data)  # Display the DataFrame
-except Exception as e:
-    st.error(f"Error converting to DataFrame: {e}")
+    # Open the Google Sheet by name
+    sheet = client.open("Your Google Sheet Name").sheet1  # Replace with your Google Sheet name
+
+    # Get all records from the sheet
+    data = sheet.get_all_records()
+
+    # Convert data to a pandas DataFrame
+    df = pd.DataFrame(data)
+
+    return df
+
+# Streamlit app
+st.title("Google Sheets Data in Streamlit")
+
+# Load and display the data
+df = load_gsheet_data()
+st.write(df)
+
 
 
