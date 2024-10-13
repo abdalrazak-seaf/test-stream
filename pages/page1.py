@@ -24,9 +24,9 @@ df = conn.read()
 # Streamlit app
 st.title("Google Sheets Data in Streamlit")
 
-# Load and display the data
-df = load_gsheet_data()
-st.write(df)
+# # Load and display the data
+# df = load_gsheet_data()
+# st.write(df)
 
 
 
