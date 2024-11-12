@@ -23,7 +23,7 @@ data = conn.read(spreadsheet=url)
 st.dataframe(data)
 
 #configure the dashboard page
-st.set_page_config(page_title="Superstore!!!", page_icon=":bar_chart:",layout="wide")
+st.set_page_config(page_title="Superstore!!!")
     
 st.title(" :bar_chart: SG Employee Dashboard")
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
