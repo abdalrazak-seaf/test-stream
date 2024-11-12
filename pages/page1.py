@@ -21,7 +21,7 @@ st.title("Chatbot_Abdalrazak")
 
 from streamlit_gsheets import GSheetsConnection
 
-url = "https://docs.google.com/spreadsheets/d/1JDy9md2VZPz4JbYtRPJLs81_3jUK47nx6GYQjgU8qNY/edit?usp=sharing"
+url = "https://docs.google.com/spreadsheets/d/1G9T2qeBA8AAKUl6J1lGvSY_Kw2-CmKQBIFkAFptoxa8/edit?gid=0#gid=0"
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 
