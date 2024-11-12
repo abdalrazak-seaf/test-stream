@@ -25,7 +25,7 @@ url = "https://docs.google.com/spreadsheets/d/1G9T2qeBA8AAKUl6J1lGvSY_Kw2-CmKQBI
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-data = conn.read(spreadsheet=url, usecols=[0, 5])
+data = conn.read(spreadsheet=url)
 st.dataframe(data)
 
 # # Create a connection object.
