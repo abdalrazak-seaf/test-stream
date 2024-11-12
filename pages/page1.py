@@ -223,6 +223,114 @@ with col9:
     fig, ax = plt.subplots()
     sns.scatterplot(data=correlation_df, x='Total Projects', y='average rating', ax=ax)
     st.pyplot(fig)
-
+    #---------------------------------------------------------------------
+        
+    # Create two columns for the new analysis
+col10, col11 = st.columns(2)
+    
+    # Column 10: Analysis of Employee Turnover
+with col10:
+    st.subheader("Employee Turnover Analysis")
+    
+        # Assuming df is your DataFrame
+    leaving_count = df[df['Status'] == 'Leaving'].shape[0]
+    total_employees = df.shape[0]
+    turnover_rate = (leaving_count / total_employees) * 100
+    
+    st.write(f"Number of Employees Leaving: {leaving_count}")
+    st.write(f"Total Number of Employees: {total_employees}")
+    st.write(f"Turnover Rate: {turnover_rate:.2f}%")
+    
+    # Column 11: Correlation Between Tenure, Ratings, and Turnover using Plotly
+with col11:
+    st.subheader("Correlation: Tenure, Evaluation, and Turnover")
+    
+        # Calculate the average rating
+    df['average_evaluation'] = df[['july 2023', 'jan 2023']].mean(axis=1)
+    
+        # Convert turnover status to a binary variable (1 for leaving, 0 for others)
+    df['turnover_status'] = df['Status'].apply(lambda x: 1 if x == 'Leaving' else 0)
+    
+        # Calculate correlation
+    correlation_matrix = df[['Months since Joining', 'average_evaluation', 'turnover_status']].corr().round(2)
+    
+        # Use Plotly to create an interactive heatmap
+    fig = px.imshow(correlation_matrix, text_auto=True, aspect='auto',
+                        labels=dict(x="Variable", y="Variable", color="Correlation"),
+                        x=correlation_matrix.columns, y=correlation_matrix.columns,
+                        color_continuous_scale='Blues')
+        # fig.update_layout(title='Correlation Matrix')
+    st.plotly_chart(fig, use_container_width=True)
+    
+    #---------------------------------------------
+st.sidebar.header("Choose your filter: ")
+    #-----------------------------------------
+    # Create for employee
+emp = st.sidebar.multiselect("Pick your Employee", df["Full Name "].unique())
+if not emp:
+    df2 = data.copy()
+else:
+    df2 = df[df["Full Name "].isin(emp)]
+    
+    # Add a subheader above the filtered DataFrame
+st.subheader("Filtered Employee Data")
+    
+    # Display the filtered DataFrame
+st.dataframe(df2)
+    
+fig = px.bar(df2, x = "Full Name ", y=["Digital", "Marketing", "Operation", "Strategy"], barmode='group'
+                 , template = "seaborn")
+    # Update y-axis ticks to be a sequence of integers
+    # fig.update_yaxes(tickmode='array', tickvals=list(range(0, int(df2[["Digital", "Marketing", "Operation", "Strategy"]].max().max()) + 1)))
+    
+    
+st.plotly_chart(fig, use_container_width=True)
+    
+    #-----------------------------------------
+    # Create for Designation
+designation = st.sidebar.multiselect("Pick a Designation", df["Designation"].unique())
+df3 = df[df["Designation"].isin(designation)]
+    # Add a subheader above the filtered DataFrame
+st.subheader("Filtered Designation")
+st.dataframe(df3)
+    
+fig = px.bar(df3, x = "Full Name ", y=["Digital", "Marketing", "Operation", "Strategy"], barmode='group'
+                 , template = "seaborn", title="Number of projects in SL")
+    # Update y-axis ticks to be a sequence of integers
+    # fig.update_yaxes(tickmode='array', tickvals=list(range(0, int(df2[["Digital", "Marketing", "Operation", "Strategy"]].max().max()) + 1)))
+    
+st.plotly_chart(fig, use_container_width=True)
+    
+    #--------------------------------------------------
+    
+    # Streamlit application
+st.title("Service Line and Designation Selector")
+    
+    # Step 1: Create a Service Line Selector in the sidebar
+service_lines = ['Digital', 'Marketing', 'Operation', 'Strategy']
+selected_service_line = st.sidebar.selectbox('Pick a Service Line', service_lines)
+    
+    # Sort the DataFrame based on the selected service line and filter out rows with NaN in that column
+filtered_df = df.sort_values(by=[selected_service_line], ascending=False)
+filtered_df = filtered_df[filtered_df[selected_service_line].notna()]
+    
+    # Step 2: Create a Multi-Selector for Designations in the sidebar based on the filtered data
+    # Get unique list of designations from the filtered DataFrame
+unique_designations = filtered_df['Designation'].unique()
+selected_designations = st.sidebar.multiselect('Pick Designation(s)', unique_designations)
+    
+    # Filter the DataFrame further based on selected designations
+if selected_designations:
+    final_df = filtered_df[filtered_df['Designation'].isin(selected_designations)]
+else:
+    final_df = filtered_df
+    
+    # Display the selected options and filtered data
+    # st.write(f"You selected the {selected_service_line} service line.")
+    # st.write("You selected the following designation(s):", selected_designations)
+    
+    # Optionally, display the final filtered DataFrame
+st.dataframe(final_df)
+    
 
 
