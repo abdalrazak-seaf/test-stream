@@ -27,6 +27,7 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 
 data = conn.read(spreadsheet=url)
 st.dataframe(data)
+#--------------
 df = pd.DataFrame(data)
     
     # Specify the desired order for designations
@@ -35,6 +36,9 @@ desired_order = ['Analyst-Intern', 'Future Gears Analyst', 'Analyst', 'Associate
     
     # Update the 'Designation' column to be a categorical type with the specified order
 df['Designation'] = pd.Categorical(df['Designation'], categories=desired_order, ordered=True)
+
+data2 = conn.read(spreadsheet=url, worksheet = '1168015449')
+st.dataframe(data2)
 
 
 
