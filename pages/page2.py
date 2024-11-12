@@ -24,3 +24,5 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 data = conn.read(spreadsheet=url, worksheet = 'Sheet1')
 st.dataframe(data)
 
+data2 = conn.read(spreadsheet=url, worksheet = 'Sheet3')
+st.dataframe(data2)
