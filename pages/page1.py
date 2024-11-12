@@ -16,7 +16,7 @@ import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 
 #configure the dashboard page
-st.set_page_config(page_title="Superstore!!!")
+# st.set_page_config(page_title="Superstore!!!")
     
 st.title(" :bar_chart: SG Employee Dashboard")
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
