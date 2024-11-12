@@ -38,7 +38,7 @@ desired_order = ['Analyst-Intern', 'Future Gears Analyst', 'Analyst', 'Associate
     # Update the 'Designation' column to be a categorical type with the specified order
 df['Designation'] = pd.Categorical(df['Designation'], categories=desired_order, ordered=True)
 
-url2 = "https://docs.google.com/spreadsheets/d/18hn6TOgx2yRerr4tMvJgnFc0JdB0hAMK3ZT3a1azw4I/edit?pli=1&gid=1168015449#gid=1168015449"
+url2 = "https://docs.google.com/spreadsheets/d/18hn6TOgx2yRerr4tMvJgnFc0JdB0hAMK3ZT3a1azw4I/edit?pli=1&gid=0#gid=0"
 data2 = conn.read(spreadsheet=url2, worksheet='1168015449')
 st.dataframe(data2)
 
