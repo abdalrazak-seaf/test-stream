@@ -16,17 +16,17 @@ import streamlit as st
 
 st.title("Chatbot_Abdalrazak")
 
-# Create a connection object.
-conn = st.connection("gsheets", type=GSheetsConnection)
+# # Create a connection object.
+# conn = st.connection("gsheets", type=GSheetsConnection)
 
-df = conn.read()
+# df = conn.read()
 
-# Streamlit app
-st.title("Google Sheets Data in Streamlit")
+# # Streamlit app
+# st.title("Google Sheets Data in Streamlit")
 
-# # Load and display the data
-# df = load_gsheet_data()
-# st.write(df)
+# # # Load and display the data
+# # df = load_gsheet_data()
+# # st.write(df)
 
 
 
