@@ -13,7 +13,7 @@ from streamlit_gsheets import GSheetsConnection
 #configure the dashboard page
 # st.set_page_config(page_title="Superstore!!!")
     
-st.title(" :bar_chart: SG Employee Dashboard")
+st.title(" :bar_chart: Resources Matching")
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
 
 url = "https://docs.google.com/spreadsheets/d/18hn6TOgx2yRerr4tMvJgnFc0JdB0hAMK3ZT3a1azw4I/edit?pli=1&gid=0#gid=0"
@@ -22,7 +22,9 @@ url = "https://docs.google.com/spreadsheets/d/18hn6TOgx2yRerr4tMvJgnFc0JdB0hAMK3
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 data = conn.read(spreadsheet=url, worksheet = 'Sheet1')
-st.dataframe(data)
+# st.dataframe(data)
+df = pd.DataFrame(data)
 
 data2 = conn.read(spreadsheet=url, worksheet = 'Sheet3')
-st.dataframe(data2)
+# st.dataframe(data2)
+df_proj = pd.DataFrame(data2)
