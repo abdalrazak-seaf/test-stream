@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+9# -*- coding: utf-8 -*-
 """
 Created on Wed Sep 18 14:38:39 2024
 
@@ -25,7 +25,7 @@ url = "https://docs.google.com/spreadsheets/d/1G9T2qeBA8AAKUl6J1lGvSY_Kw2-CmKQBI
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-data = conn.read(spreadsheet=url, usecols=[0, 1])
+data = conn.read(spreadsheet=url, usecols=[0, 9])
 st.dataframe(data)
 
 # # Create a connection object.
