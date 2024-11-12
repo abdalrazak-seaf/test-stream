@@ -13,12 +13,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 import streamlit as st
-
-st.title("Chatbot_Abdalrazak")
-
-# example/st_app.py
-
-
 from streamlit_gsheets import GSheetsConnection
 
 url = "https://docs.google.com/spreadsheets/d/18hn6TOgx2yRerr4tMvJgnFc0JdB0hAMK3ZT3a1azw4I/edit?pli=1&gid=0#gid=0"
@@ -28,17 +22,12 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 data = conn.read(spreadsheet=url)
 st.dataframe(data)
 
-# # Create a connection object.
-# conn = st.connection("gsheets", type=GSheetsConnection)
+#configure the dashboard page
+st.set_page_config(page_title="Superstore!!!", page_icon=":bar_chart:",layout="wide")
+    
+st.title(" :bar_chart: SG Employee Dashboard")
+st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
 
-# df = conn.read()
-
-# # Streamlit app
-# st.title("Google Sheets Data in Streamlit")
-
-# # # Load and display the data
-# # df = load_gsheet_data()
-# # st.write(df)
 
 
 
