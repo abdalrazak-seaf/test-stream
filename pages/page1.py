@@ -39,7 +39,7 @@ desired_order = ['Analyst-Intern', 'Future Gears Analyst', 'Analyst', 'Associate
 df['Designation'] = pd.Categorical(df['Designation'], categories=desired_order, ordered=True)
 
 url2 = "https://docs.google.com/spreadsheets/d/18hn6TOgx2yRerr4tMvJgnFc0JdB0hAMK3ZT3a1azw4I/edit?pli=1&gid=1168015449#gid=1168015449"
-data2 = conn.read(spreadsheet=url2)
+data2 = conn.read(spreadsheet=url2, worksheet='1168015449')
 st.dataframe(data2)
 
 
