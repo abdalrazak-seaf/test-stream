@@ -26,7 +26,7 @@ url = "https://docs.google.com/spreadsheets/d/18hn6TOgx2yRerr4tMvJgnFc0JdB0hAMK3
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-data = conn.read(spreadsheet=url, worksheet = '0')
+data = conn.read(spreadsheet=url)
 st.dataframe(data)
 #--------------
 df = pd.DataFrame(data)
