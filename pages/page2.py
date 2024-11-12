@@ -207,13 +207,13 @@ if selected_service_lines and selected_sub_service_lines:
     test_df = filtered_df.copy()
 
     # Create a download button for the Excel file
-    with open(output_filename, "rb") as file:
-        btn = st.download_button(
-            label="Download Match Rate Analysis as Excel",
-            data=file,
-            file_name=output_filename,
-            mime="application/vnd.ms-excel"
-        )
+    # with open(output_filename, "rb") as file:
+    #     btn = st.download_button(
+    #         label="Download Match Rate Analysis as Excel",
+    #         data=file,
+    #         file_name=output_filename,
+    #         mime="application/vnd.ms-excel"
+    #     )
 else:
     st.write("Please select a service line and a sub-service line to view the match rate analysis.")
     
