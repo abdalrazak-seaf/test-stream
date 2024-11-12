@@ -202,7 +202,7 @@ if selected_service_lines and selected_sub_service_lines:
                 st.error(f"Error: Required columns for {ssl} are missing.")
     # Save the DataFrame to an Excel file
     output_filename = "match_rate_analysis.xlsx"
-    filtered_df.to_excel(output_filename, index=False)
+    # filtered_df.to_excel(output_filename, index=False)
     
     test_df = filtered_df.copy()
 
