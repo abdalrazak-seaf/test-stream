@@ -13,7 +13,7 @@ from streamlit_gsheets import GSheetsConnection
 #configure the dashboard page
 # st.set_page_config(page_title="Superstore!!!")
     
-st.title("\n :bar_chart: Resources Matching")
+st.title("\n\n\n\n\n\n :bar_chart: Resources Matching")
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
 
 
