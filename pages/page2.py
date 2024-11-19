@@ -1,4 +1,4 @@
-9"""
+"""
 Created on Wed Sep 18 14:38:39 2024
 
 @author: AbdulrazaqAlden
@@ -19,7 +19,9 @@ from streamlit_gsheets import GSheetsConnection
 #configure the dashboard page
 # st.set_page_config(page_title="Superstore!!!")
     
-st.title(" :bar_chart: Resources Matching")
+st.title(" 
+
+         :bar_chart: Resources Matching")
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
 
 
